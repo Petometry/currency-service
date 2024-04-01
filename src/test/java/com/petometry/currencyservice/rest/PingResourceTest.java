@@ -1,7 +1,7 @@
-package com.frameboter.template.rest;
+package com.petometry.currencyservice.rest;
 
-import com.frameboter.template.Application;
-import com.frameboter.template.rest.model.Ping;
+import com.petometry.currencyservice.Application;
+import com.petometry.currencyservice.rest.model.Ping;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
