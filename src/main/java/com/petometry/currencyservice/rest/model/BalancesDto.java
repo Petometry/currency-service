@@ -7,5 +7,5 @@ import lombok.ToString;
 @ToString
 public class BalancesDto {
 
-    private Long geocoins;
+    private Long geocoin;
 }

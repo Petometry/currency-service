@@ -14,7 +14,7 @@ public class BalanceServiceImpl implements BalanceService {
     public BalancesDto getAllBalances(String userId) {
 
         BalancesDto balancesDto = new BalancesDto();
-        balancesDto.setGeocoins(geocoinService.getBalance(userId).getBalance());
+        balancesDto.setGeocoin(geocoinService.getBalance(userId).getBalance());
         return balancesDto;
     }
 
