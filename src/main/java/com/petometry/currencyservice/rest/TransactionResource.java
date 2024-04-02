@@ -14,11 +14,13 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Log4j2
 @RequiredArgsConstructor
+@RequestMapping("/transactions")
 public class TransactionResource extends AbstractResource {
 
     private final TransactionService transactionService;
@@ -29,7 +31,7 @@ public class TransactionResource extends AbstractResource {
             @ApiResponse(responseCode = "200", description = "Transaction created successfully"),
             @ApiResponse(responseCode = "401", description = "User is not logged in via Keycloak", content = @Content)
     })
-    @PostMapping("/transactions")
+    @PostMapping()
     BalanceDto createTransaction(@AuthenticationPrincipal Jwt jwt, @RequestBody Transaction transaction) {
         // @formatter:on
         String userId = getUserId(jwt);
