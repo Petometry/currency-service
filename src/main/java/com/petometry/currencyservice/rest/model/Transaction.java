@@ -13,5 +13,5 @@ public class Transaction {
 
     private String target;
 
-    private Long value;
+    private Double value;
 }

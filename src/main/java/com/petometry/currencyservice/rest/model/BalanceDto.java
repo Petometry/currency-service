@@ -9,5 +9,5 @@ public class BalanceDto {
 
     private CurrencyType currency;
 
-    private Long balance;
+    private Double balance;
 }

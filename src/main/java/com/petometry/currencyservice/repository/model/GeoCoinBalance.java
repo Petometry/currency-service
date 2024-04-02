@@ -16,7 +16,7 @@ public class GeoCoinBalance {
     private Long id;
 
     @Column(name = "balance", nullable = false)
-    private Long balance;
+    private Double balance;
 
     @Column(name = "owner_id", nullable = false, unique = true)
     private String ownerId;
