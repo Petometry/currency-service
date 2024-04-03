@@ -26,7 +26,7 @@ public class GeocoinServiceImpl implements GeocoinService {
         if (balanceOptional.isEmpty()) {
             balance = new GeoCoinBalance();
             balance.setOwnerId(userId);
-            balance.setBalance(10L);
+            balance.setBalance(10.0);
         } else {
             balance = balanceOptional.get();
         }
