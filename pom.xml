@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.petometry</groupId>
-    <artifactId>currencyservice</artifactId>
+    <artifactId>currency-service</artifactId>
     <version>0.1.0</version>
     <name>currency service</name>
     <description>currency service</description>
