@@ -46,7 +46,7 @@ public class PetfoodResource extends AbstractResource {
             @ApiResponse(responseCode = "400", description = "Values can not be 0", content = @Content)
     })
     @PutMapping()
-    PetFoodBalancesDto updatePetFoods(@AuthenticationPrincipal Jwt jwt,@RequestBody @Valid PetFoodBalancesDto petfoods) {
+    PetFoodBalancesDto updatePetFoodBalances(@AuthenticationPrincipal Jwt jwt,@RequestBody @Valid PetFoodBalancesDto petfoods) {
         // @formatter:on
         String userId = getUserId(jwt);
         log.info("getBalances started for userId=" + userId);
