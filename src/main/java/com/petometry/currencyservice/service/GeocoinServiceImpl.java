@@ -4,6 +4,7 @@ import com.petometry.currencyservice.repository.GeoCoinBalanceRepository;
 import com.petometry.currencyservice.repository.model.GeoCoinBalance;
 import com.petometry.currencyservice.rest.model.BalanceDto;
 import com.petometry.currencyservice.rest.model.CurrencyType;
+import com.petometry.currencyservice.rest.model.GeocoinBalance;
 import com.petometry.currencyservice.rest.model.Transaction;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatusCode;
@@ -31,6 +32,14 @@ public class GeocoinServiceImpl implements GeocoinService {
             balance = balanceOptional.get();
         }
         return balance;
+    }
+
+    @Override
+    public GeocoinBalance getGeocoinBalance(String userId) {
+
+        GeocoinBalance geocoinBalance = new GeocoinBalance();
+        geocoinBalance.setGeocoin(getBalance(userId).getBalance());
+        return geocoinBalance;
     }
 
     @Override
