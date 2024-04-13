@@ -1,8 +1,8 @@
 package com.petometry.currencyservice.rest;
 
 import com.frameboter.rest.AbstractResource;
-import com.petometry.currencyservice.rest.model.BalancesDto;
-import com.petometry.currencyservice.service.BalanceService;
+import com.petometry.currencyservice.rest.model.GeocoinBalance;
+import com.petometry.currencyservice.service.GeocoinService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Log4j2
 @RequiredArgsConstructor
-@RequestMapping("/balances")
-public class BalanceResource extends AbstractResource {
+@RequestMapping("/geocoins")
+public class GeocoinResource extends AbstractResource {
 
-    private final BalanceService balanceService;
+    private final GeocoinService geocoinService;
 
     // @formatter:off
     @Operation(summary = "Returns balances ", description = "Returns the balances of the currently logged in user")
@@ -30,12 +30,12 @@ public class BalanceResource extends AbstractResource {
             @ApiResponse(responseCode = "401", description = "User is not logged in via Keycloak", content = @Content)
     })
     @GetMapping()
-    BalancesDto getBalances(@AuthenticationPrincipal Jwt jwt) {
+    GeocoinBalance getGeocoins(@AuthenticationPrincipal Jwt jwt) {
         // @formatter:on
         String userId = getUserId(jwt);
         log.info("getBalances started for userId=" + userId);
-        BalancesDto balances = balanceService.getAllBalances(userId);
-        log.info("getBalances finished for userId={} balances={}", getUserId(jwt), balances);
-        return balances;
+        GeocoinBalance balance = geocoinService.getGeocoinBalance(userId);
+        log.info("getBalances finished for userId={} balance={}", getUserId(jwt), balance);
+        return balance;
     }
 }
