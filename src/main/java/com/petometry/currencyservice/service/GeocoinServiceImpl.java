@@ -20,7 +20,14 @@ public class GeocoinServiceImpl implements GeocoinService {
     private final GeoCoinBalanceRepository balanceRepository;
 
     @Override
-    public GeoCoinBalance getBalance(String userId) {
+    public GeocoinBalance getGeocoinBalance(String userId) {
+
+        GeocoinBalance geocoinBalance = new GeocoinBalance();
+        geocoinBalance.setGeocoin(getBalance(userId).getBalance());
+        return geocoinBalance;
+    }
+
+    private GeoCoinBalance getBalance(String userId) {
 
         Optional<GeoCoinBalance> balanceOptional = balanceRepository.findByOwnerId(userId);
         GeoCoinBalance balance;
@@ -32,14 +39,6 @@ public class GeocoinServiceImpl implements GeocoinService {
             balance = balanceOptional.get();
         }
         return balance;
-    }
-
-    @Override
-    public GeocoinBalance getGeocoinBalance(String userId) {
-
-        GeocoinBalance geocoinBalance = new GeocoinBalance();
-        geocoinBalance.setGeocoin(getBalance(userId).getBalance());
-        return geocoinBalance;
     }
 
     @Override
