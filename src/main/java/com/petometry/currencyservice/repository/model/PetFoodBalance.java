@@ -19,12 +19,12 @@ public class PetFoodBalance {
     private String ownerId;
 
     @Column(name = "circle")
-    private Long circle;
+    private Double circle;
 
     @Column(name = "triangle")
-    private Long triangle;
+    private Double triangle;
 
     @Column(name = "rectangle")
-    private Long rectangle;
+    private Double rectangle;
 
 }

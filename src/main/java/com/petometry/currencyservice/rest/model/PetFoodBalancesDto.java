@@ -16,13 +16,13 @@ public class PetFoodBalancesDto implements Serializable {
 
     @NotNull
     @Min(value = 0, message = "Circle can not be negative")
-    private Long circle;
+    private Double circle;
 
     @NotNull
     @Min(value = 0, message = "Triangle can not be negative")
-    private Long triangle;
+    private Double triangle;
 
     @NotNull
     @Min(value = 0, message = "Rectangle can not be negative")
-    private Long rectangle;
+    private Double rectangle;
 }
