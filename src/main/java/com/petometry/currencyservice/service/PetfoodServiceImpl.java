@@ -51,9 +51,9 @@ public class PetfoodServiceImpl implements PetfoodService {
         PetFoodBalance petFoodBalance;
         PetFoodBalance newPetFoodBalance = new PetFoodBalance();
         newPetFoodBalance.setOwnerId(userId);
-        newPetFoodBalance.setCircle(0.0);
-        newPetFoodBalance.setTriangle(0.0);
-        newPetFoodBalance.setRectangle(0.0);
+        newPetFoodBalance.setCircle(100.0);
+        newPetFoodBalance.setTriangle(100.0);
+        newPetFoodBalance.setRectangle(100.0);
         petFoodBalance = petFoodBalanceRepository.save(newPetFoodBalance);
         return petFoodBalance;
     }
