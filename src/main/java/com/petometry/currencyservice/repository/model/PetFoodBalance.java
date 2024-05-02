@@ -9,7 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class GeoCoinBalance {
+public class PetFoodBalance {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
@@ -18,9 +18,13 @@ public class GeoCoinBalance {
     @Column(name = "owner_id", nullable = false, unique = true)
     private String ownerId;
 
-    @Column(name = "balance", nullable = false)
-    private Double balance;
+    @Column(name = "circle")
+    private Double circle;
 
+    @Column(name = "triangle")
+    private Double triangle;
 
+    @Column(name = "rectangle")
+    private Double rectangle;
 
 }
