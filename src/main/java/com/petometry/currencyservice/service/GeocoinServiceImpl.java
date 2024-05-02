@@ -28,7 +28,6 @@ public class GeocoinServiceImpl implements GeocoinService {
     }
 
     private GeoCoinBalance getBalance(String userId) {
-    public GeoCoinBalance getBalance(String userId) {
 
         Optional<GeoCoinBalance> balanceOptional = balanceRepository.findByOwnerId(userId);
         GeoCoinBalance balance;
